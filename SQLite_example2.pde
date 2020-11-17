@@ -4,6 +4,7 @@ import de.bezier.data.sql.*;
 SQLite db;
 
 loggetInd LI = new loggetInd();
+opgaver o = new opgaver();
 
 int i = 0;
 int j = 0;
@@ -48,8 +49,10 @@ void setup() {
 void draw() {
   clear();
   background(0);
-  input1.input(100, 100, 0, 0);
-  input2.input(100, 200, 0, 0);
+  startpage();
+  textAlign(LEFT);
+  input1.input(100, 300, 0, 0);
+  input2.input(100, 400, 0, 0);
   Enter();
 
   if (login == true) {
@@ -57,6 +60,10 @@ void draw() {
     LI.display();
     LI.musKlik();
   }
+  
+    
+  
+  LI.hvilkenOPG();
   //println(LI.plus);
   //println(LI.minus);
   //println(LI.gange);
@@ -86,6 +93,22 @@ void Enter() {
     }
   }
   if (key == ENTER || key == RETURN && login == false) {
-    text("Desværre - forkert brugernavn eller adgangskode", 30, 30);
+    fill(255,0,0);
+    textSize(20);
+    text("Desværre - forkert brugernavn eller adgangskode", 50, 450);
+    fill(0);
+    textSize(36);
   }
+}
+
+void startpage(){
+ textSize(36);
+  fill(0,255,50);
+  textAlign(CENTER);
+  text("Velkommen \n Test din viden ved at logge ind nedenfor",650,100);
+  fill(0,0,255);
+  textSize(20);
+  text("Tryk 'TAB' for at skrive Password",200,350);
+  fill(0);
+  textSize(36);
 }

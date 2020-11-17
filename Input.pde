@@ -11,9 +11,9 @@ class Input {
     label = label_;
   }
 
-  void input(int xPos, int yPos, int bredde, int hoejde) {
-    fill(255); 
+  void input(int xPos, int yPos, int bredde, int hoejde) { 
     textSize(32);
+    fill(255);
     text (label+result, xPos, yPos);
     fill(0);
   }
