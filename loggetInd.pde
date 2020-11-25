@@ -46,9 +46,9 @@ class loggetInd {
       fillg1 = 0;
       fillb1 = 0;
     } else {
-      fillr1 = 100;
-      fillg1 = 100;
-      fillb1 = 100;
+      fillr1 = 70;
+      fillg1 = 50;
+      fillb1 = 204;
     }
 
     if (mouseX>800 && mouseX <1200 && mouseY>300 && mouseY <300+100) {
@@ -56,9 +56,9 @@ class loggetInd {
       fillg2 = 0;
       fillb2 = 0;
     } else {
-      fillr2 = 100;
-      fillg2 = 100;
-      fillb2 = 100;
+      fillr2 = 70;
+      fillg2 = 50;
+      fillb2 = 204;
     }
 
     if (mouseX>100 && mouseX <100 + 400 && mouseY>500 && mouseY <600) {
@@ -66,9 +66,9 @@ class loggetInd {
       fillg3 = 0;
       fillb3 = 0;
     } else {
-      fillr3 = 100;
-      fillg3 = 100;
-      fillb3 = 100;
+      fillr3 = 70;
+      fillg3 = 50;
+      fillb3 = 204;
     }
 
     if (mouseX>800 && mouseX <1200 && mouseY>500 && mouseY <600) {
@@ -76,11 +76,12 @@ class loggetInd {
       fillg4 = 0;
       fillb4 = 0;
     } else {
-      fillr4 = 100;
-      fillg4 = 100;
-      fillb4 = 100;
+      fillr4 = 70;
+      fillg4 = 50;
+      fillb4 = 204;
     }
-    
+    noStroke();
+    fill(70, 60, 204);
     rect(0, 0, 1800, 700);
     fill(r, g, b);
     textSize(100);
@@ -107,8 +108,10 @@ class loggetInd {
   }
 
   void musKlik() {
+
+
     if (mousePressed) {
-      if (mouseX>100 && mouseX <100 + 400 && mouseY>300 && mouseY <300+100) {
+      if (mouseX>100 && mouseX <100 + 400 && mouseY>300 && mouseY <300+100 && o.tilbageTrykket == true) {
         plus = true;
         minus = false;
         gange = false;
@@ -116,14 +119,15 @@ class loggetInd {
         o.tilbageTrykket = false;
       }
 
-      if (mouseX>800 && mouseX <1200 && mouseY>300 && mouseY <300+100) {
+      if (mouseX>800 && mouseX <1200 && mouseY>300 && mouseY <300+100 && o.tilbageTrykket == true) {
         minus = true;
         gange = false;
         division = false;
+        plus = false; 
         o.tilbageTrykket = false;
       }
 
-      if (mouseX>100 && mouseX <100 + 400 && mouseY>500 && mouseY <600) {
+      if (mouseX>100 && mouseX <100 + 400 && mouseY>500 && mouseY <600 && o.tilbageTrykket == true) {
         gange = true;
         plus = false;
         minus = false;
@@ -131,7 +135,7 @@ class loggetInd {
         o.tilbageTrykket = false;
       }
 
-      if (mouseX>800 && mouseX <1200 && mouseY>500 && mouseY <600) {
+      if (mouseX>800 && mouseX <1200 && mouseY>500 && mouseY <600 && o.tilbageTrykket == true) {
         plus = false;
         minus = false;
         gange = false;

@@ -13,6 +13,7 @@ boolean tabTrykket = false;
 
 String loginBruger = "Lars";
 String loginPassword = "Pass1";
+PFont Helvetica;
 
 Input input1;
 Input input2;
@@ -26,7 +27,7 @@ void setup() {
 
   db = new SQLite( this, "test.db" );  // open database file
 
-//  println(login);
+  //println(login);
 
   if ( db.connect() )
   {
@@ -44,15 +45,17 @@ void setup() {
       //println("Password:  "+PW+"\n");
     }
   }
+
+  Helvetica = createFont("HelveticaLTStd-Bold.otf", 32);
 }
 
 void draw() {
   clear();
-  background(0);
+  background( 255, 195, 0 );
   startpage();
   textAlign(LEFT);
-  input1.input(100, 300, 0, 0);
-  input2.input(100, 400, 0, 0);
+  input1.input(100, 400, 0, 0);
+  input2.input(100, 500, 0, 0);
   Enter();
 
   if (login == true) {
@@ -60,9 +63,9 @@ void draw() {
     LI.display();
     LI.musKlik();
   }
-  
-    
-  
+
+
+
   LI.hvilkenOPG();
   //println(LI.plus);
   //println(LI.minus);
@@ -93,22 +96,25 @@ void Enter() {
     }
   }
   if (key == ENTER || key == RETURN && login == false) {
-    fill(255,0,0);
+    fill(255, 0, 0);
     textSize(20);
-    text("Desværre - forkert brugernavn eller adgangskode", 50, 450);
+    text("Desværre - forkert brugernavn eller adgangskode", 100, 550);
     fill(0);
     textSize(36);
   }
 }
 
-void startpage(){
- textSize(36);
-  fill(0,255,50);
-  textAlign(CENTER);
-  text("Velkommen \n Test din viden ved at logge ind nedenfor",650,100);
-  fill(0,0,255);
+void startpage() {
+  textFont(Helvetica);
+  textSize(100);
+  fill(0);
+  textAlign(LEFT);
+  text("Log Ind", 100, 150);
+  textSize(30);
+  text("Test din viden ved at\nlogge ind nedenfor", 100, 250);
+  fill(0);
   textSize(20);
-  text("Tryk 'TAB' for at skrive Password",200,350);
+  text("Tryk 'TAB' for at skrive Password", 100, 450);
   fill(0);
   textSize(36);
 }
