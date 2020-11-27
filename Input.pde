@@ -14,7 +14,7 @@ class Input {
   void input(int xPos, int yPos, int bredde, int hoejde) { 
     textSize(32);
     fill(255);
-    text (label+result, xPos, yPos);
+    text (label+result+blinkChar(), xPos, yPos);
     fill(0);
   }
 

@@ -10,6 +10,7 @@ int i = 0;
 int j = 0;
 boolean login = false;
 boolean tabTrykket = false;
+boolean isFocused = false;
 
 String loginBruger = "Lars";
 String loginPassword = "Pass1";
@@ -23,6 +24,7 @@ void setup() {
 
   input1 = new Input("Login: ");
   input2 = new Input("Password: ");
+  isFocused = true;
 
 
   db = new SQLite( this, "test.db" );  // open database file
@@ -117,4 +119,8 @@ void startpage() {
   text("Tryk 'TAB' for at skrive Password", 100, 450);
   fill(0);
   textSize(36);
+}
+
+String blinkChar() {
+  return isFocused && (frameCount>>2 & 1) == 0 ? "_" : "";
 }

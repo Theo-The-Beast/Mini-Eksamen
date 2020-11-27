@@ -63,7 +63,7 @@ class opgaver {
       fill(0, 255, 0);
       text("Rigtigt svar\n Tryk på pilen og vælg en ny opgave", 620, 600);
       fill(255);
-      NyOpgave();
+      nyOpgave();
     }
 
 
@@ -128,7 +128,7 @@ class opgaver {
       fill(0, 255, 0);
       text("Rigtigt svar\n Tryk på pilen og vælg en ny opgave", 620, 600);
       fill(255);
-      NyOpgave();
+      nyOpgave();
     }
 
     tilbage();
@@ -192,7 +192,7 @@ class opgaver {
       fill(0, 255, 0);
       text("Rigtigt svar\n Tryk på pilen og vælg en ny opgave", 620, 600);
       fill(255);
-      NyOpgave();
+      nyOpgave();
     }
 
     tilbage();
@@ -257,7 +257,7 @@ class opgaver {
       fill(0, 255, 0);
       text("Rigtigt svar\n Tryk på pilen og vælg en ny opgave", 620, 600);
       fill(255);
-      NyOpgave();
+      nyOpgave();
     }
 
     tilbage();
@@ -282,7 +282,7 @@ class opgaver {
     }
   }
 
-  void NyOpgave() {
+  void nyOpgave() {
 
     fill(255);
     rect(850, 400, 60, 60);
